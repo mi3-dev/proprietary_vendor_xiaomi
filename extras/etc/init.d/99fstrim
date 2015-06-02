@@ -1,0 +1,9 @@
+#!/system/bin/sh
+#Remove Old Log
+rm /data/trim.log
+
+# fstrim and log
+fstrim -v /system >> /data/trim.log;
+fstrim -v /data >> /data/trim.log;
+fstrim -v /cache >> /data/trim.log;
+echo  "Last TRIM was on: $( date +"%m-%d-%Y %r" )" >> /data/trim.log
