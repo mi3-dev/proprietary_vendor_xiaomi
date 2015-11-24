@@ -17,22 +17,5 @@
 # Pick up overlay for features that depend on non-open-source files
 DEVICE_PACKAGE_OVERLAYS += vendor/xiaomi/cancro/overlay
 
-PRODUCT_PACKAGES += \
-    com.qualcomm.location \
-    libHevcSwDecoder \
-    libmm-abl \
-    libqct_resampler \
-    libtime_genoff \
-    libTimeService \
-    TimeService \
-    libscale \
-    libqminvapi \
-    libqti-perfd-client \
-    QuickBoot \
-    qcrilmsgtunnel \
-    shutdownlistener
-
-PRODUCT_PACKAGE_OVERLAYS += vendor/xiaomi/overlay/common
-
 $(call inherit-product, vendor/xiaomi/cancro/cancro-vendor-blobs.mk)
-$(call inherit-product-if-exists, vendor/xiaomi/extras/device-partial.mk)
+$(call inherit-product, vendor/xiaomi/msm8974-common/msm8974-common-vendor.mk)
